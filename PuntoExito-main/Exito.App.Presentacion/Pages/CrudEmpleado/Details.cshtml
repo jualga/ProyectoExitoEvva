@@ -1,0 +1,69 @@
+@page
+@model Exito.App.Presentacion.Pages.CrudEmpleado.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@{
+    await Html.RenderPartialAsync("_Header");
+}
+@{
+    await Html.RenderPartialAsync("_SideMenu");
+}
+
+<div class="main">
+    <div>
+        <h4>Empleado</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Empleado.Cedula)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Empleado.Cedula)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Empleado.Nombre)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Empleado.Nombre)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Empleado.Apellido)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Empleado.Apellido)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Empleado.Usuario)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Empleado.Usuario)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Empleado.Clave)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Empleado.Clave)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Empleado.Rol)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Empleado.Rol.RolId)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Empleado.Sucursal)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Empleado.Sucursal.SucursalId)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-page="./Edit" asp-route-id="@Model.Empleado.EmpleadoId">Edit</a> |
+        <a asp-page="./Index">Back to List</a>
+    </div>
+
+</div>

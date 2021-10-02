@@ -1,0 +1,204 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+
+/* Provide sufficient contrast against white background */
+
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    /* margin-bottom: 60px; */
+    overflow-y: hidden;
+}
+
+main {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 70px calc(100% - 100px) 50px;
+}
+
+.footer {
+    grid-column: 1 /span 2;
+    grid-row: 3;
+    height: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    background-color: #ABA3A3;
+    /* Vertically center the text there */
+}
+
+.l-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+
+.l-container .l-form {
+    width: 498px;
+    height: 454px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 50px;
+    box-shadow: 2px 2px 5px #FFE800;
+}
+
+.l-container .l-form input,
+.l-container .l-form button {
+    display: block;
+    width: 100%;
+    border: 0;
+}
+
+.l-container .l-form input {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    height: 49.93px;
+    padding-left: 15px;
+    outline: none;
+}
+
+.l-container .l-form input:focus {
+    box-shadow: 0px 0px 5px #FFE800;
+}
+
+.l-container .l-form input::placeholder {
+    color: #ABA3A3;
+}
+
+.l-container .l-form button {
+    border-radius: 10px;
+    background: #FFE800;
+    height: 59.05px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    color: #FFFFFF;
+}
+
+.container {
+    width: 100%;
+}
+
+
+/* Header */
+
+.header {
+    width: 100%;
+    height: 70px;
+    background-color: #FFE800;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+
+/* End header */
+
+.side-menu {
+    background-color: #191919;
+    height: 100%;
+    width: 100%;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+.main {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 30px;
+}
+
+.c-pass {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}

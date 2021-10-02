@@ -1,0 +1,18 @@
+@page
+@model Exito.App.Presentacion.Pages.LogIn.LoingModel
+
+@{
+    ViewData["title"] = "Sign in";
+}
+
+<div class="l-container">
+    <form class="l-form" method="post">
+        <input type="text" asp-for="Empleado.Usuario" placeholder="Ingrese usuario">
+        <input type="text" asp-for="Empleado.Clave" placeholder="Ingrese contraseña">
+        <button>Entrar</button>
+    </form>
+</div>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
