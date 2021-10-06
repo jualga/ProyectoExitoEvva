@@ -26,6 +26,9 @@ namespace Exito.App.Presentacion.Pages.LogIn
         [BindProperty]
         public Empleado Empleado { get; set; }
 
+        [BindProperty]
+        public String Mensaje { get; set; }
+
         public async Task<IActionResult> OnPostAsync()
         {
             // if (Usuario == null && passowrd == null)
@@ -58,7 +61,7 @@ namespace Exito.App.Presentacion.Pages.LogIn
                 }
 
             }
-            Console.WriteLine("Usuario o contraseña incorrecatos");
+            Mensaje = "Usuario o contraseña incorrectos";
 
             return Page();
             //    ViewData["RolId"] = new SelectList(_context.Roles, "RolId", "Nombre");

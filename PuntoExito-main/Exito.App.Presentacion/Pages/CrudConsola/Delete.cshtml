@@ -3,80 +3,82 @@
 
 @{
     ViewData["Title"] = "Delete";
+    await Html.RenderPartialAsync("_Header");
+    await Html.RenderPartialAsync("_SideMenu");
 }
 
-<h1>Delete</h1>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Consola</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Consola.Almacenamiento)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Consola.Almacenamiento)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Consola.VelocidadRam)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Consola.VelocidadRam)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Consola.VelocidadProcesamiento)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Consola.VelocidadProcesamiento)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Consola.TypoDisco)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Consola.TypoDisco)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Consola.Controles)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Consola.Controles.Id)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Consola.Nombre)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Consola.Nombre)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Consola.Version)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Consola.Version)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Consola.Fabricante)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Consola.Fabricante)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Consola.precioCompra)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Consola.precioCompra)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Consola.precioVenta)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Consola.precioVenta)
-        </dd>
-    </dl>
-    
-    <form method="post">
-        <input type="hidden" asp-for="Consola.Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
-    </form>
+<div class="main">
+    <div>
+        <h4>Consola</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Consola.Almacenamiento)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Consola.Almacenamiento)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Consola.VelocidadRam)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Consola.VelocidadRam)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Consola.VelocidadProcesamiento)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Consola.VelocidadProcesamiento)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Consola.TypoDisco)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Consola.TypoDisco)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Consola.Controles)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Consola.Controles.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Consola.Nombre)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Consola.Nombre)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Consola.Version)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Consola.Version)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Consola.Fabricante)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Consola.Fabricante)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Consola.precioCompra)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Consola.precioCompra)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Consola.precioVenta)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Consola.precioVenta)
+            </dd>
+        </dl>
+
+        <form method="post">
+            <input type="hidden" asp-for="Consola.Id" />
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-page="./Index">Back to List</a>
+        </form>
+    </div>
 </div>

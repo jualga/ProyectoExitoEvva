@@ -3,17 +3,13 @@
 
 @{
     ViewData["Title"] = "Create";
-}
-
-@{
     await Html.RenderPartialAsync("_Header");
-}
-@{
     await Html.RenderPartialAsync("_SideMenu");
 }
 
-<div class="main">
 
+<div class="main">
+    
     <div class="row">
         <div class="col-md-4">
             <form method="post">
@@ -44,11 +40,11 @@
                     <span asp-validation-for="Empleado.Clave" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Empleado.RolId" class="control-label"></label>
+                    <label asp-for="Empleado.RolId" class="control-label">Sucursal</label>
                     <select asp-for="Empleado.RolId" class="form-control" asp-items="ViewBag.RolId"></select>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Empleado.SucursalId" class="control-label"></label>
+                    <label asp-for="Empleado.SucursalId" class="control-label">Rol</label>
                     <select asp-for="Empleado.SucursalId" class="form-control" asp-items="ViewBag.SucursalId"></select>
                 </div>
                 <div class="form-group">

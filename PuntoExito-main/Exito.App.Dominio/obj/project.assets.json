@@ -111,19 +111,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\casa\\.nuget\\packages\\": {}
+    "C:\\Users\\Fabig\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\casa\\Documents\\PuntoExito-main (5)\\PuntoExito-main\\Exito.App.Dominio\\Exito.App.Dominio.csproj",
+      "projectUniqueName": "C:\\Users\\Fabig\\work-space\\mintic\\evva\\ProyectoExitoEvva\\PuntoExito-main\\Exito.App.Dominio\\Exito.App.Dominio.csproj",
       "projectName": "Exito.App.Dominio",
-      "projectPath": "C:\\Users\\casa\\Documents\\PuntoExito-main (5)\\PuntoExito-main\\Exito.App.Dominio\\Exito.App.Dominio.csproj",
-      "packagesPath": "C:\\Users\\casa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\casa\\Documents\\PuntoExito-main (5)\\PuntoExito-main\\Exito.App.Dominio\\obj\\",
+      "projectPath": "C:\\Users\\Fabig\\work-space\\mintic\\evva\\ProyectoExitoEvva\\PuntoExito-main\\Exito.App.Dominio\\Exito.App.Dominio.csproj",
+      "packagesPath": "C:\\Users\\Fabig\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Fabig\\work-space\\mintic\\evva\\ProyectoExitoEvva\\PuntoExito-main\\Exito.App.Dominio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\casa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Fabig\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"

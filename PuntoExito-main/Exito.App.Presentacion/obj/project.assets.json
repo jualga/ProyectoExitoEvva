@@ -8604,19 +8604,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\casa\\.nuget\\packages\\": {}
+    "C:\\Users\\Fabig\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\casa\\Documents\\PuntoExito-main (5)\\PuntoExito-main\\Exito.App.Presentacion\\Exito.App.Presentacion.csproj",
+      "projectUniqueName": "C:\\Users\\Fabig\\work-space\\mintic\\evva\\ProyectoExitoEvva\\PuntoExito-main\\Exito.App.Presentacion\\Exito.App.Presentacion.csproj",
       "projectName": "Exito.App.Presentacion",
-      "projectPath": "C:\\Users\\casa\\Documents\\PuntoExito-main (5)\\PuntoExito-main\\Exito.App.Presentacion\\Exito.App.Presentacion.csproj",
-      "packagesPath": "C:\\Users\\casa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\casa\\Documents\\PuntoExito-main (5)\\PuntoExito-main\\Exito.App.Presentacion\\obj\\",
+      "projectPath": "C:\\Users\\Fabig\\work-space\\mintic\\evva\\ProyectoExitoEvva\\PuntoExito-main\\Exito.App.Presentacion\\Exito.App.Presentacion.csproj",
+      "packagesPath": "C:\\Users\\Fabig\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Fabig\\work-space\\mintic\\evva\\ProyectoExitoEvva\\PuntoExito-main\\Exito.App.Presentacion\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\casa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Fabig\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -8627,11 +8627,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\casa\\Documents\\PuntoExito-main (5)\\PuntoExito-main\\Exito.App.Dominio\\Exito.App.Dominio.csproj": {
-              "projectPath": "C:\\Users\\casa\\Documents\\PuntoExito-main (5)\\PuntoExito-main\\Exito.App.Dominio\\Exito.App.Dominio.csproj"
+            "C:\\Users\\Fabig\\work-space\\mintic\\evva\\ProyectoExitoEvva\\PuntoExito-main\\Exito.App.Dominio\\Exito.App.Dominio.csproj": {
+              "projectPath": "C:\\Users\\Fabig\\work-space\\mintic\\evva\\ProyectoExitoEvva\\PuntoExito-main\\Exito.App.Dominio\\Exito.App.Dominio.csproj"
             },
-            "C:\\Users\\casa\\Documents\\PuntoExito-main (5)\\PuntoExito-main\\Exito.App.Persistencia\\Exito.App.Persistencia.csproj": {
-              "projectPath": "C:\\Users\\casa\\Documents\\PuntoExito-main (5)\\PuntoExito-main\\Exito.App.Persistencia\\Exito.App.Persistencia.csproj"
+            "C:\\Users\\Fabig\\work-space\\mintic\\evva\\ProyectoExitoEvva\\PuntoExito-main\\Exito.App.Persistencia\\Exito.App.Persistencia.csproj": {
+              "projectPath": "C:\\Users\\Fabig\\work-space\\mintic\\evva\\ProyectoExitoEvva\\PuntoExito-main\\Exito.App.Persistencia\\Exito.App.Persistencia.csproj"
             }
           }
         }

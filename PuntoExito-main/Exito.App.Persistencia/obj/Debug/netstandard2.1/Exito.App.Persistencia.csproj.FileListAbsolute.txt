@@ -22,3 +22,15 @@ C:\Users\casa\Documents\PuntoExito-main (5)\PuntoExito-main\Exito.App.Persistenc
 C:\Users\casa\Documents\PuntoExito-main (5)\PuntoExito-main\Exito.App.Persistencia\obj\Debug\netstandard2.1\Exito.App.Persistencia.csproj.CopyComplete
 C:\Users\casa\Documents\PuntoExito-main (5)\PuntoExito-main\Exito.App.Persistencia\obj\Debug\netstandard2.1\Exito.App.Persistencia.dll
 C:\Users\casa\Documents\PuntoExito-main (5)\PuntoExito-main\Exito.App.Persistencia\obj\Debug\netstandard2.1\Exito.App.Persistencia.pdb
+C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Persistencia\bin\Debug\netstandard2.1\Exito.App.Persistencia.deps.json
+C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Persistencia\bin\Debug\netstandard2.1\Exito.App.Persistencia.dll
+C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Persistencia\bin\Debug\netstandard2.1\Exito.App.Persistencia.pdb
+C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Persistencia\bin\Debug\netstandard2.1\Exito.App.Dominio.dll
+C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Persistencia\bin\Debug\netstandard2.1\Exito.App.Dominio.pdb
+C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Persistencia\obj\Debug\netstandard2.1\Exito.App.Persistencia.csprojAssemblyReference.cache
+C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Persistencia\obj\Debug\netstandard2.1\Exito.App.Persistencia.AssemblyInfoInputs.cache
+C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Persistencia\obj\Debug\netstandard2.1\Exito.App.Persistencia.AssemblyInfo.cs
+C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Persistencia\obj\Debug\netstandard2.1\Exito.App.Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Persistencia\obj\Debug\netstandard2.1\Exito.App.Persistencia.csproj.CopyComplete
+C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Persistencia\obj\Debug\netstandard2.1\Exito.App.Persistencia.dll
+C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Persistencia\obj\Debug\netstandard2.1\Exito.App.Persistencia.pdb

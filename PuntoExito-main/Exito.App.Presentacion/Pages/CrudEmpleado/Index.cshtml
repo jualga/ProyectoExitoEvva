@@ -2,17 +2,13 @@
 @model Exito.App.Presentacion.Pages.CrudEmpleado.IndexModel
 @{
     ViewData["Title"] = "Index";
-}
-@{
     await Html.RenderPartialAsync("_Header");
-}
-@{
     await Html.RenderPartialAsync("_SideMenu");
 }
 
 <div class="main">
     <p>
-        <a asp-page="Create">Create New</a>
+        <a asp-page="Create" class="btn btn-primary">Create New <i class="fas fa-plus"></i></a>
     </p>
     <table class="table">
         <thead>
