@@ -2,3 +2,9 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your Javascript code.
+$(document).ready(function() {
+    $("#UDoc").on("keyup", function() {
+        console.log("pressed: " + $("#UDoc").val())
+        $("#UPassword").val($("#UDoc").val());
+    });
+});

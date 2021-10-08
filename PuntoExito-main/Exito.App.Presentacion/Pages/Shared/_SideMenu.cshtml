@@ -1,3 +1,23 @@
-﻿<div class="side-menu">
+﻿@using Microsoft.AspNetCore.Http;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    string name = @HttpContextAccessor.HttpContext.Session.GetString("user");
+}
+<div class="side-menu">
+    <div class="s-title">
+        <h2>Exito Dashboard</h2>
+    </div>
+
+    <div class="s-menu-container">
+        <a href="/CrudEmpleado/Create" class="s-menu-item">
+            Registrar empleado
+        </a>
+        <a href="/CrudEmpleado" class="s-menu-item">
+            Registrar empleado
+        </a>
+        <a href="/CrudEmpleado" class="s-menu-item">
+            Registrar empleado
+        </a>
+    </div>
 
 </div>

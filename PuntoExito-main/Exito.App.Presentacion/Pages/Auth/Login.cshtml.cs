@@ -27,7 +27,7 @@ namespace Exito.App.Presentacion.Pages.LogIn
         public Empleado Empleado { get; set; }
 
         [BindProperty]
-        public String Mensaje { get; set; }
+        public String Mensaje { get; set; } = "";
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -46,16 +46,16 @@ namespace Exito.App.Presentacion.Pages.LogIn
 
             if (EmpleadoFound != null)
             {
-                if (EmpleadoFound.Usuario == EmpleadoFound.Clave)
+                if (EmpleadoFound.Cedula == EmpleadoFound.Clave)
                 {
                     return RedirectToPage("./ChangePassword", new { id = EmpleadoFound.EmpleadoId });
                     // Console.WriteLine(EmpleadoFound.Nombre);
                 }
                 if (EmpleadoFound.Clave == this.Empleado.Clave)
                 {
-                    return RedirectToPage("../CrudEmpleado/Index");
                     var str = JsonConvert.SerializeObject(EmpleadoFound);
                     HttpContext.Session.SetString("user", str);
+                    return RedirectToPage("../CrudEmpleado/Index");
                     // Console.WriteLine(EmpleadoFound.Nombre);
                     Console.WriteLine(HttpContext.Session.GetString("user"));
                 }

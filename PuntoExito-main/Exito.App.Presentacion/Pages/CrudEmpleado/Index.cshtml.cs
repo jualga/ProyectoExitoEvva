@@ -21,7 +21,7 @@ namespace Exito.App.Presentacion.Pages.CrudEmpleado
 
         public IList<Empleado> Empleado { get;set; }
 
-        public Empleado User {get; set;}
+        // public Empleado User {get; set;}
 
         public async Task OnGetAsync()
         {

@@ -16,7 +16,7 @@
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="Empleado.Cedula" class="control-label"></label>
-                    <input asp-for="Empleado.Cedula" class="form-control" />
+                    <input asp-for="Empleado.Cedula" id="UDoc" class="form-control" />
                     <span asp-validation-for="Empleado.Cedula" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -36,7 +36,7 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="Empleado.Clave" class="control-label"></label>
-                    <input asp-for="Empleado.Clave" class="form-control" />
+                    <input asp-for="Empleado.Clave" id="UPassword" class=" form-control" disabled/>
                     <span asp-validation-for="Empleado.Clave" class="text-danger"></span>
                 </div>
                 <div class="form-group">

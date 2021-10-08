@@ -1,5 +1,16 @@
-﻿
+﻿@using Microsoft.AspNetCore.Http;
+@using Newtonsoft.Json;
+@using Exito.App.Dominio;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    string name = @HttpContextAccessor.HttpContext.Session.GetString("user");
+}
+@{
+  Empleado Person = JsonConvert.DeserializeObject<Empleado>(name);
+}
 <header class="header w-100" >
-    <h2 ></h2>
-    This is header
+    <h4 >@Person.Nombre @Person.Apellido</h4>
+    <div class="h-icon">
+            <img src="~/images/person.png" alt="" srcset="">
+    </div>
 </header>

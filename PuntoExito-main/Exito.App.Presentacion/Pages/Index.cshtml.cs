@@ -19,10 +19,9 @@ namespace Exito.App.Presentacion.Pages
             _logger = logger;
         }
 
-        public void OnGet()
-        {
-            
-
+        public IActionResult OnGet()
+        {   
+            return RedirectToPage("./Auth/Login");
         }
     }
 }

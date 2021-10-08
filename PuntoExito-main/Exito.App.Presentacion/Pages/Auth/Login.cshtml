@@ -7,9 +7,15 @@
 
 <div class="l-container">
     <form class="l-form" method="post">
-        <span type="text">@Model.Mensaje</span>
-        <input type="text" asp-for="Empleado.Usuario" placeholder="Ingrese usuario">
-        <input type="text" asp-for="Empleado.Clave" placeholder="Ingrese contraseña">
+        <div class="l-icon">
+            <img src="~/images/person.png" alt="" srcset="">
+        </div>
+        @if (!Model.Mensaje.Equals(""))
+        {
+            <span type="text" class="alert alert-danger">@Model.Mensaje</span>
+        }
+        <input type="text" asp-for="Empleado.Usuario" placeholder="Ingrese usuario" autocomplete="off">
+        <input type="password" asp-for="Empleado.Clave" placeholder="Ingrese contraseña">
         <button>Entrar</button>
     </form>
 </div>

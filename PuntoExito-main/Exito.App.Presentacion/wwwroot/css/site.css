@@ -100,7 +100,7 @@ main {
     position: absolute;
     width: 100%;
     height: 100vh;
-    background-color: #eeeeee;
+    background-color: #F3F3F3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,6 +120,7 @@ main {
     gap: 40px;
     padding: 50px;
     box-shadow: 2px 2px 5px #FFE800;
+    position: relative;
 }
 
 .l-container .l-form input,
@@ -158,8 +159,20 @@ main {
     color: #FFFFFF;
 }
 
-.container {
+.l-container .l-icon {
+    width: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: 40%;
+    box-shadow: 2px 2px 4px #FFE800;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.l-container .l-icon img {
     width: 100%;
+    border-radius: 50%;
 }
 
 
@@ -171,17 +184,83 @@ main {
     background-color: #FFE800;
     grid-column: 2;
     grid-row: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    padding-right: 20px;
+}
+
+.header .h-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+    padding: 1px;
+}
+
+.header .h-icon img {
+    width: 100%;
+    border-radius: 50%;
 }
 
 
 /* End header */
 
 .side-menu {
+    position: relative;
     background-color: #191919;
     height: 100%;
     width: 100%;
     grid-column: 1;
     grid-row: 1 / span 2;
+}
+
+.side-menu::before {
+    content: "";
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    background-color: #FFE800;
+    top: 0;
+    left: 0;
+}
+
+.side-menu .s-title {
+    width: 100%;
+    height: 70px;
+    color: #ffffff;
+    text-transform: capitalize;
+    border-bottom: 1px solid #8a8a8a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-menu .s-menu-container {
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.side-menu .s-menu-container .s-menu-item {
+    width: 100%;
+    display: flex;
+    padding-left: 25px;
+    align-items: center;
+    height: 50px;
+    box-shadow: 0 0 3px rgba(255, 254, 254, 0.30);
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.side-menu .s-menu-container .s-menu-item:hover {
+    background-color: #E1CD02;
+    color: #191919;
 }
 
 .main {
