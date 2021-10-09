@@ -1,9 +1,0 @@
-C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Dominio\bin\Debug\netstandard2.1\Exito.App.Dominio.deps.json
-C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Dominio\bin\Debug\netstandard2.1\Exito.App.Dominio.dll
-C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Dominio\bin\Debug\netstandard2.1\Exito.App.Dominio.pdb
-C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Dominio\obj\Debug\netstandard2.1\Exito.App.Dominio.csprojAssemblyReference.cache
-C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Dominio\obj\Debug\netstandard2.1\Exito.App.Dominio.AssemblyInfoInputs.cache
-C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Dominio\obj\Debug\netstandard2.1\Exito.App.Dominio.AssemblyInfo.cs
-C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Dominio\obj\Debug\netstandard2.1\Exito.App.Dominio.csproj.CoreCompileInputs.cache
-C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Dominio\obj\Debug\netstandard2.1\Exito.App.Dominio.dll
-C:\Users\Fabig\work-space\mintic\evva\ProyectoExitoEvva\PuntoExito-main\Exito.App.Dominio\obj\Debug\netstandard2.1\Exito.App.Dominio.pdb
