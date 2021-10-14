@@ -63,11 +63,9 @@
                         @Html.DisplayFor(modelItem => item.Sucursal.Nombre)
                     </td>
                     <td>
-                        <a asp-page="./Edit" asp-route-id="@item.EmpleadoId" class="btn btn-primary" title="Editar"><i
-                            class="fas fa-edit"></i></a>
+                        <a asp-page="./Edit" asp-route-id="@item.EmpleadoId" class="btn btn-primary" title="Editar"><i class="fas fa-edit"></i></a>
                         <a asp-page="./Details" asp-route-id="@item.EmpleadoId" class="btn btn-secondary"  title="Datlles"><i class="fas fa-clipboard-list"></i></a>
-                        <a asp-page="./Delete" asp-route-id="@item.EmpleadoId" class="btn btn-danger" title="Eliminar"><i
-                            class="fas fa-trash-alt"></i></a>
+                        <a asp-page="./Delete" asp-route-id="@item.EmpleadoId" class="btn btn-danger" title="Eliminar"><i class="fas fa-trash-alt"></i></a>
                     </td>
                 </tr>
             }

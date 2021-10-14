@@ -13,6 +13,7 @@ namespace Exito.App.Presentacion.Pages.CrudControl
     public class CreateModel : PageModel
     {
         private readonly Exito.App.Persistencia.AppContext _context;
+        private int defaultCode {get; set;} = 1001;
 
         public CreateModel(Exito.App.Persistencia.AppContext context)
         {
@@ -35,7 +36,12 @@ namespace Exito.App.Presentacion.Pages.CrudControl
             {
                 return Page();
             }
-
+            var Response = _context.Controles.OrderByDescending(p => p.Id).FirstOrDefault();
+            if(Response == null){
+                Control.Codigo = ""+defaultCode;
+            }else{
+                Control.Codigo = ""+(int.Parse(Response.Codigo)+1);
+            }
             _context.Controles.Add(Control);
             await _context.SaveChangesAsync();
 

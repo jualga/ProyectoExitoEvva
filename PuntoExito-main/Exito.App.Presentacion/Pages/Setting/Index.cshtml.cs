@@ -35,9 +35,14 @@ namespace Exito.App.Presentacion.Pages.Setting
                 TypoDiscos.Add(new TypoDisco{Nombre = discos});
             }
             Exito.App.Persistencia.AppContext _context = new Exito.App.Persistencia.AppContext();
+
             _context.TypoDiscos.AddRange(TypoDiscos);
             _context.Sucursales.AddRange(Sucursales);
             _context.Roles.AddRange(Roles);
+
+            // var rolr = _context.Roles.FirstOrDefault(r=>r.Nombre.Equals("Administrador de sistemas"));
+            // var sucursalr = _context.Sucursales.FirstOrDefault(r=>r.Nombre.Equals("Sucursal A"));
+            // _context.Empleados.Add(new Empleado{ Nombre = "Admin", Cedula = "12345678", Usuario="Admin", Clave = "Admin", RolId = rolr.RolId, SucursalId = sucursalr.SucursalId });
             _context.SaveChanges();
 
             Message = "Data saved";
