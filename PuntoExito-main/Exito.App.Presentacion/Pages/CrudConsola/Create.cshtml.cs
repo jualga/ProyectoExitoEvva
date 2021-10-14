@@ -16,17 +16,22 @@ namespace Exito.App.Presentacion.Pages.CrudConsola
 
         public CreateModel(Exito.App.Persistencia.AppContext context)
         {
-            _context = context;
+            _context = new Exito.App.Persistencia.AppContext();
         }
 
         public IActionResult OnGet()
         {
-        ViewData["ControlId"] = new SelectList(_context.Controles, "Id", "Id");
+        ViewData["ControlId"] = new SelectList(_context.Controles, "Id", "Nombre");
             return Page();
         }
 
         [BindProperty]
         public Consola Consola { get; set; }
+
+        [BindProperty]
+        public string Codigo { get; set; }
+        [BindProperty]
+        public string CodigoMessage { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -37,6 +42,14 @@ namespace Exito.App.Presentacion.Pages.CrudConsola
                 return Page();
             }
 
+
+            Control Control = _context.Controles.FirstOrDefault(c=>c.Codigo == Codigo);
+            if(Control == null){
+                CodigoMessage = "Codigo invalido";
+                return Page();
+            }
+
+            Consola.ControlId = Control.Id;
             _context.Consolas.Add(Consola);
             await _context.SaveChangesAsync();
 

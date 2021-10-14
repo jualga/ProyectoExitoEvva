@@ -21,7 +21,7 @@
                 <div class="form-group">
                     <label asp-for="Codigo" class="control-label">Codigo de consola</label>
                     <input asp-for="Codigo" class="form-control" />
-                    <span asp-validation-for="Codigo" class="text-danger"></span>
+                    <span class="text-danger">@Model.CodigoMessage</span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Cantidad" class="control-label">Cantidad de consolas</label>
@@ -44,7 +44,7 @@
                     <select asp-for="Compra.EmpleadoId" class="form-control" asp-items="ViewBag.EmpleadoId"></select>
                 </div> *@
                 <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <input type="submit" value="Guardar" class="btn btn-primary" />
                 </div>
             </form>
         </div>

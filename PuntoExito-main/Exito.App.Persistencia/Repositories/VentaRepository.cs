@@ -19,7 +19,7 @@ namespace Exito.App.Persistencia
             return vent.Entity;
         }
         public Venta Update(Venta venta){
-            var ventaEncontrado = _context.Ventas.FirstOrDefault(p=>p.VentaID == venta.VentaID);
+            var ventaEncontrado = _context.Ventas.FirstOrDefault(p=>p.VentaId == venta.VentaId);
             if(ventaEncontrado != null){
                 ventaEncontrado.Fecha = venta.Fecha;
                 ventaEncontrado.Total = venta.Total;
@@ -37,11 +37,11 @@ namespace Exito.App.Persistencia
             return this._context.Ventas.ToList();
         }
         public Venta FindOne(int id){
-            var ventaEncontrado = _context.Ventas.FirstOrDefault(p=>p.VentaID == id);
+            var ventaEncontrado = _context.Ventas.FirstOrDefault(p=>p.VentaId == id);
             return ventaEncontrado;
         }
         public bool Delete(int id){
-            var ventaEncontrado = _context.Ventas.FirstOrDefault(p=>p.VentaID == id);
+            var ventaEncontrado = _context.Ventas.FirstOrDefault(p=>p.VentaId == id);
             if(ventaEncontrado != null){
                 this._context.Ventas.Remove(ventaEncontrado);
                 this._context.SaveChanges();

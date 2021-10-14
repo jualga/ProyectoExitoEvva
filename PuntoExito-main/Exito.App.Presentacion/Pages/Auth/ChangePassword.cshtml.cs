@@ -33,10 +33,10 @@ namespace Exito.App.Presentacion.Pages.Auth
         public string Message { get; set; } = "";
 
 
-        public async Task OnGetAsync(int? id)
+        public IActionResult OnGetAsync(int? id)
         {
 
-
+            return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()

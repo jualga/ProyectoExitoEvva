@@ -26,13 +26,15 @@ namespace Exito.App.Presentacion.Pages.CrudCompra
         }
 
         [BindProperty]
+        public string CodigoMessage { get; set; }
+        [BindProperty]
         public Compra Compra { get; set; }
 
-        [BindProperty]
-        public CompraDetalle CompraDetalle { get; set; }
+        // [BindProperty]
+        // public CompraDetalle CompraDetalle { get; set; }
 
-        [BindProperty]
-        public List<Compra> CompraDetalles { get; set; }
+        // [BindProperty]
+        // public List<Compra> CompraDetalles { get; set; }
         [BindProperty]
         public string Codigo { get; set; }
         [BindProperty]
@@ -47,8 +49,17 @@ namespace Exito.App.Presentacion.Pages.CrudCompra
                 return Page();
             }
 
-            _context.Compras.Add(Compra);
-            _context.CompraDetalles.Add(CompraDetalle);
+            Consola Consola = _context.Consolas.FirstOrDefault(c=>c.Codigo == Codigo);
+            if(Consola == null){
+                CodigoMessage = "No se encontro ninguna consola con este codigo";
+                return Page();
+            }
+
+            Compra.ConsolaId = Consola.Id;
+            var ActualCompra = _context.Compras.Add(Compra);
+
+            // CompraDetalle.CompraId = ActualCompra.CompraId;
+            // _context.CompraDetalles.Add(CompraDetalle);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
