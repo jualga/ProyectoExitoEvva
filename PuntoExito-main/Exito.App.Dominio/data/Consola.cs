@@ -15,6 +15,7 @@ namespace Exito.App.Dominio
         public string VelocidadRam {get; set;}
         public string VelocidadProcesamiento {get; set;}
         public TypoDisco TypoDisco {get; set;}
+        [ForeignKey("TypoDiscoId")]
 
         public int ControlId {get; set;}
         [ForeignKey("ControlId")]

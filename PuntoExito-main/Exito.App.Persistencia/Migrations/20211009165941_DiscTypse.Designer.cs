@@ -4,14 +4,16 @@ using Exito.App.Persistencia;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Exito.App.Persistencia.Migrations
 {
     [DbContext(typeof(AppContext))]
-    partial class AppContextModelSnapshot : ModelSnapshot
+    [Migration("20211009165941_DiscTypse")]
+    partial class DiscTypse
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -80,9 +82,6 @@ namespace Exito.App.Persistencia.Migrations
                     b.Property<string>("Almacenamiento")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Codigo")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("ControlId")
                         .HasColumnType("int");
 
@@ -128,9 +127,6 @@ namespace Exito.App.Persistencia.Migrations
 
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
-
-                    b.Property<string>("Codigo")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Fabricante")
                         .HasColumnType("nvarchar(max)");
@@ -291,9 +287,6 @@ namespace Exito.App.Persistencia.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
-
-                    b.Property<string>("Codigo")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ConsolaId")
                         .HasColumnType("int");

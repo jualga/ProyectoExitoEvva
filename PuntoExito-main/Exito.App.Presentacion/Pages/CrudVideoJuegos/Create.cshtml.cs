@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Exito.App.Dominio;
 using Exito.App.Persistencia;
 
-namespace Exito.App.Presentacion.Pages.CrudEmpleado
+namespace Exito.App.Presentacion.Pages.CrudVideoJuegos
 {
     public class CreateModel : PageModel
     {
@@ -16,18 +16,16 @@ namespace Exito.App.Presentacion.Pages.CrudEmpleado
 
         public CreateModel(Exito.App.Persistencia.AppContext context)
         {
-            _context = new Exito.App.Persistencia.AppContext();
+            _context = context;
         }
 
         public IActionResult OnGet()
         {
-        ViewData["RolId"] = new SelectList(_context.Roles, "RolId", "Nombre");
-        ViewData["SucursalId"] = new SelectList(_context.Sucursales,"SucursalId", "Nombre");
             return Page();
         }
 
         [BindProperty]
-        public Empleado Empleado { get; set; }
+        public VideoJuego VideoJuego { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -38,8 +36,7 @@ namespace Exito.App.Presentacion.Pages.CrudEmpleado
                 return Page();
             }
 
-            Empleado.Clave = Empleado.Cedula;
-            _context.Empleados.Add(Empleado);
+            _context.VideoJuegos.Add(VideoJuego);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

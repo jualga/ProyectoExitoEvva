@@ -20,7 +20,7 @@ namespace Exito.App.Presentacion.Pages.LogIn
 
         public LoingModel(Exito.App.Persistencia.AppContext context)
         {
-            _context = context;
+            _context = new Exito.App.Persistencia.AppContext();
         }
 
         [BindProperty]
@@ -48,6 +48,7 @@ namespace Exito.App.Presentacion.Pages.LogIn
             {
                 if (EmpleadoFound.Cedula == EmpleadoFound.Clave)
                 {
+                    HttpContext.Session.SetString("UId", EmpleadoFound.EmpleadoId.ToString());
                     return RedirectToPage("./ChangePassword", new { id = EmpleadoFound.EmpleadoId });
                     // Console.WriteLine(EmpleadoFound.Nombre);
                 }
@@ -55,9 +56,16 @@ namespace Exito.App.Presentacion.Pages.LogIn
                 {
                     var str = JsonConvert.SerializeObject(EmpleadoFound);
                     HttpContext.Session.SetString("user", str);
-                    return RedirectToPage("../CrudEmpleado/Index");
+                    if(EmpleadoFound.Rol.Nombre.Equals("Administrador de sistemas"))
+                        return RedirectToPage("../CrudEmpleado/Index");
+                    if(EmpleadoFound.Rol.Nombre.Equals("Administrador de Ventas"))
+                        return RedirectToPage("../CrudVentas/Index");
+                    if(EmpleadoFound.Rol.Nombre.Equals("Administrador de compras"))
+                        return RedirectToPage("../CrudCompra/Index");
+                    if(EmpleadoFound.Rol.Nombre.Equals("Vendedor"))
+                        return RedirectToPage("../CrudVenta/Index");
                     // Console.WriteLine(EmpleadoFound.Nombre);
-                    Console.WriteLine(HttpContext.Session.GetString("user"));
+                    // Console.WriteLine(HttpContext.Session.GetString("user"));
                 }
 
             }

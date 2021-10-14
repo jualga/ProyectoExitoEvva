@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 using Exito.App.Dominio;
 using Exito.App.Persistencia;
 
@@ -18,11 +19,9 @@ namespace Exito.App.Presentacion.Pages.Auth
 
         public ChangePasswordMode(Exito.App.Persistencia.AppContext context)
         {
-            _context = context;
+            _context = new Exito.App.Persistencia.AppContext();
         }
 
-        [BindProperty]
-        public Empleado Empleado { get; set; }
 
         [BindProperty]
         public string Password1 { get; set; } = "";
@@ -30,11 +29,13 @@ namespace Exito.App.Presentacion.Pages.Auth
         [BindProperty]
         public string Password2 { get; set; } = "";
 
+        [BindProperty]
+        public string Message { get; set; } = "";
+
+
         public async Task OnGetAsync(int? id)
         {
-            Empleado = await _context.Empleados
-                .Include(e => e.Rol)
-                .Include(e => e.Sucursal).FirstOrDefaultAsync(m => m.EmpleadoId == id);
+
 
         }
 
@@ -47,28 +48,36 @@ namespace Exito.App.Presentacion.Pages.Auth
 
             if (Password1.Equals(Password2) && !Password1.Equals(""))
             {
-                Empleado.Clave = Password1;
-                _context.Attach(Empleado).State = EntityState.Modified;
-
-                try
+                String uid = HttpContext.Session.GetString("UId");
+                if (uid != null)
                 {
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!EmpleadoExists(Empleado.EmpleadoId))
+                    Empleado Empleado = await _context.Empleados
+                        .Include(e => e.Rol)
+                        .Include(e => e.Sucursal).FirstOrDefaultAsync(m => m.EmpleadoId == int.Parse(uid));
+                    if (Empleado != null)
                     {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
+                        Empleado.Clave = Password1;
+                        try
+                        {
+                            await _context.SaveChangesAsync();
+                        }
+                        catch (DbUpdateConcurrencyException)
+                        {
+                            if (!EmpleadoExists(Empleado.EmpleadoId))
+                            {
+                                return NotFound();
+                            }
+                            else
+                            {
+                                throw;
+                            }
+                        }
                     }
                 }
 
                 return RedirectToPage("./Login");
             }
-            Console.WriteLine(Password1+"  : "+Password2);
+            Message = "Contraseñas deben ser iguales";
             return Page();
         }
 

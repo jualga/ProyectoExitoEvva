@@ -3,14 +3,19 @@
 @using Exito.App.Dominio;
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 @{
-    string name = @HttpContextAccessor.HttpContext.Session.GetString("user");
+  string name = @HttpContextAccessor.HttpContext.Session.GetString("user");
 }
 @{
   Empleado Person = JsonConvert.DeserializeObject<Empleado>(name);
 }
-<header class="header w-100" >
-    <h4 >@Person.Nombre @Person.Apellido</h4>
-    <div class="h-icon">
-            <img src="~/images/person.png" alt="" srcset="">
+<header class="header w-100">
+  <h4>@Person.Nombre @Person.Apellido</h4>
+  <div class="h-icon">
+    <img src="~/images/person.png" alt="" srcset="" id="Bsubmenu">
+    <div class="submenu hide">
+      <div class="submenu-item">
+        <a href="https://localhost:5001/">Salir</a>
+      </div>
     </div>
+  </div>
 </header>

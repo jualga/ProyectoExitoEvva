@@ -1,23 +1,60 @@
 ﻿@using Microsoft.AspNetCore.Http;
+@using Newtonsoft.Json;
+@using Exito.App.Dominio;
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 @{
     string name = @HttpContextAccessor.HttpContext.Session.GetString("user");
+}
+@{
+  Empleado Person = JsonConvert.DeserializeObject<Empleado>(name);
 }
 <div class="side-menu">
     <div class="s-title">
         <h2>Exito Dashboard</h2>
     </div>
-
+    
     <div class="s-menu-container">
-        <a href="/CrudEmpleado/Create" class="s-menu-item">
-            Registrar empleado
-        </a>
-        <a href="/CrudEmpleado" class="s-menu-item">
-            Registrar empleado
-        </a>
-        <a href="/CrudEmpleado" class="s-menu-item">
-            Registrar empleado
-        </a>
+        @if(Person.Rol.Nombre.Equals("Administrador de sistemas")){
+            <a href="/CrudEmpleado/Create" class="s-menu-item">
+                Registrar empleado
+            </a>
+        
+        }
+        @if(Person.Rol.Nombre.Equals("Administrador de Ventas")){
+            <a href="/CrudEmpleado/Create" class="s-menu-item">
+                Ventas
+            </a>
+        
+        }
+        @if(Person.Rol.Nombre.Equals("Administrador de compras")){
+            <a href="/CrudCompra" class="s-menu-item">
+                Compras
+            </a>
+            <a href="/CrudControl" class="s-menu-item">
+                Controles
+            </a>
+            <a href="/CrudVideoJuegos" class="s-menu-item">
+                Video Juegos
+            </a>
+            <a href="/CrudConsola" class="s-menu-item">
+                Consolas
+            </a>
+        }
+        @if(Person.Rol.Nombre.Equals("Vendedor")){
+            <a href="/CrudControl" class="s-menu-item">
+                Controles
+            </a>
+            <a href="/CrudVideoJuegos" class="s-menu-item">
+                Video Juegos
+            </a>
+            <a href="/CrudConsola" class="s-menu-item">
+                Consolas
+            </a>
+            <a href="/CrudEmpleado/Create" class="s-menu-item">
+                Venta
+            </a>
+        
+        }
     </div>
 
 </div>

@@ -14,6 +14,7 @@ namespace Exito.App.Persistencia
         public DbSet<VideoJuego> VideoJuegos { get; set; }
         public DbSet<Venta> Ventas { get; set; }
         public DbSet<Compra> Compras { get; set; }
+        public DbSet<TypoDisco> TypoDiscos { get; set; }
         public DbSet<VentaDetalle> VentaDetalles { get; set; }
         public DbSet<CompraDetalle> CompraDetalles { get; set; }
 

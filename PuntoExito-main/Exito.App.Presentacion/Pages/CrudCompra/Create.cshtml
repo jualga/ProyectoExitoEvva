@@ -1,0 +1,59 @@
+@page
+@model Exito.App.Presentacion.Pages.CrudCompra.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    await Html.RenderPartialAsync("_Header");
+    await Html.RenderPartialAsync("_SideMenu");
+}
+
+
+<div class="main">
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @* <div class="form-group">
+                    <label asp-for="Compra.Fecha" class="control-label"></label>
+                    <input asp-for="Compra.Fecha" class="form-control" />
+                    <span asp-validation-for="Compra.Fecha" class="text-danger"></span>
+                </div> *@
+                <div class="form-group">
+                    <label asp-for="Codigo" class="control-label">Codigo de consola</label>
+                    <input asp-for="Codigo" class="form-control" />
+                    <span asp-validation-for="Codigo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Cantidad" class="control-label">Cantidad de consolas</label>
+                    <input asp-for="Cantidad" class="form-control" />
+                    <span asp-validation-for="Cantidad" class="text-danger"></span>
+                </div>
+                @* <div class="form-group">
+                    <label asp-for="Compra.Total" class="control-label"></label>
+                    <input asp-for="Compra.Total" class="form-control" />
+                    <span asp-validation-for="Compra.Total" class="text-danger"></span>
+                </div> *@
+                @* <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Compra.Finalizada" /> @Html.DisplayNameFor(model =>
+                        model.Compra.Finalizada)
+                    </label>
+                </div> *@
+                @* <div class="form-group">
+                    <label asp-for="Compra.EmpleadoId" class="control-label"></label>
+                    <select asp-for="Compra.EmpleadoId" class="form-control" asp-items="ViewBag.EmpleadoId"></select>
+                </div> *@
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-page="Index">Back to List</a>
+    </div>
+</div>
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

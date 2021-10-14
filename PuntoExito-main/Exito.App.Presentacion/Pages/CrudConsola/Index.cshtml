@@ -10,11 +10,20 @@
 
 <div class="main">
     <p>
-        <a asp-page="Create" class="btn btn-primary">Create New <i class="fas fa-plus"></i></a>
+        <a asp-page="Create" class="btn btn-primaty">Create New</a>
     </p>
     <table class="table">
         <thead>
             <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Consola[0].Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Consola[0].Version)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Consola[0].Fabricante)
+                </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Consola[0].Almacenamiento)
                 </th>
@@ -25,20 +34,9 @@
                     @Html.DisplayNameFor(model => model.Consola[0].VelocidadProcesamiento)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Consola[0].TypoDisco)
-                </th>
-                <th>
                     @Html.DisplayNameFor(model => model.Consola[0].Controles)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Consola[0].Nombre)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Consola[0].Version)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Consola[0].Fabricante)
-                </th>
+                
                 <th>
                     @Html.DisplayNameFor(model => model.Consola[0].precioCompra)
                 </th>
@@ -53,21 +51,6 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Almacenamiento)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.VelocidadRam)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.VelocidadProcesamiento)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TypoDisco)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Controles.Id)
-                    </td>
-                    <td>
                         @Html.DisplayFor(modelItem => item.Nombre)
                     </td>
                     <td>
@@ -77,19 +60,31 @@
                         @Html.DisplayFor(modelItem => item.Fabricante)
                     </td>
                     <td>
+                        @Html.DisplayFor(modelItem => item.Almacenamiento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VelocidadRam)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VelocidadProcesamiento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Controles.Id)
+                    </td>
+                    
+                    <td>
                         @Html.DisplayFor(modelItem => item.precioCompra)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.precioVenta)
                     </td>
                     <td>
-                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                        <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primaty">Edit</a>
+                        <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-secondary">Details</a>
+                        <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-
 </div>

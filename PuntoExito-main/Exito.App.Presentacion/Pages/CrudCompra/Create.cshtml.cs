@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Exito.App.Dominio;
 using Exito.App.Persistencia;
 
-namespace Exito.App.Presentacion.Pages.CrudEmpleado
+namespace Exito.App.Presentacion.Pages.CrudCompra
 {
     public class CreateModel : PageModel
     {
@@ -21,13 +21,22 @@ namespace Exito.App.Presentacion.Pages.CrudEmpleado
 
         public IActionResult OnGet()
         {
-        ViewData["RolId"] = new SelectList(_context.Roles, "RolId", "Nombre");
-        ViewData["SucursalId"] = new SelectList(_context.Sucursales,"SucursalId", "Nombre");
+        ViewData["EmpleadoId"] = new SelectList(_context.Empleados, "EmpleadoId", "Nombre");
             return Page();
         }
 
         [BindProperty]
-        public Empleado Empleado { get; set; }
+        public Compra Compra { get; set; }
+
+        [BindProperty]
+        public CompraDetalle CompraDetalle { get; set; }
+
+        [BindProperty]
+        public List<Compra> CompraDetalles { get; set; }
+        [BindProperty]
+        public string Codigo { get; set; }
+        [BindProperty]
+        public int Cantidad { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -38,8 +47,8 @@ namespace Exito.App.Presentacion.Pages.CrudEmpleado
                 return Page();
             }
 
-            Empleado.Clave = Empleado.Cedula;
-            _context.Empleados.Add(Empleado);
+            _context.Compras.Add(Compra);
+            _context.CompraDetalles.Add(CompraDetalle);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

@@ -1,0 +1,64 @@
+@page
+@model Exito.App.Presentacion.Pages.CrudVideoJuegos.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    await Html.RenderPartialAsync("_Header");
+    await Html.RenderPartialAsync("_SideMenu");
+}
+
+
+<div class="main">
+    <p>
+        <a asp-page="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.VideoJuego[0].Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VideoJuego[0].Version)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VideoJuego[0].Fabricante)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VideoJuego[0].precioCompra)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VideoJuego[0].precioVenta)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.VideoJuego)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Version)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fabricante)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.precioCompra)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.precioVenta)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

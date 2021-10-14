@@ -7,4 +7,9 @@ $(document).ready(function() {
         console.log("pressed: " + $("#UDoc").val())
         $("#UPassword").val($("#UDoc").val());
     });
+    $("#Bsubmenu").on("click", function() {
+        document.getElementsByClassName("submenu")[0].classList.toggle("hide");
+    });
+
+
 });

@@ -1,11 +1,9 @@
 namespace Exito.App.Dominio
 {
-    public enum TypoDisco
+    public class TypoDisco
     {
-        SSD,
-        HDD,
-        BOTH
-
+        public int Id {get; set;}
+        public string Nombre  {get; set;}
 
     }
 

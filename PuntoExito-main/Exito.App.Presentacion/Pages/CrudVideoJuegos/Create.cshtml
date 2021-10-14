@@ -1,0 +1,55 @@
+@page
+@model Exito.App.Presentacion.Pages.CrudVideoJuegos.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    await Html.RenderPartialAsync("_Header");
+    await Html.RenderPartialAsync("_SideMenu");
+}
+
+
+<div class="main">
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="VideoJuego.Nombre" class="control-label"></label>
+                    <input asp-for="VideoJuego.Nombre" class="form-control" />
+                    <span asp-validation-for="VideoJuego.Nombre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="VideoJuego.Version" class="control-label"></label>
+                    <input asp-for="VideoJuego.Version" class="form-control" />
+                    <span asp-validation-for="VideoJuego.Version" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="VideoJuego.Fabricante" class="control-label"></label>
+                    <input asp-for="VideoJuego.Fabricante" class="form-control" />
+                    <span asp-validation-for="VideoJuego.Fabricante" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="VideoJuego.precioCompra" class="control-label"></label>
+                    <input asp-for="VideoJuego.precioCompra" class="form-control" />
+                    <span asp-validation-for="VideoJuego.precioCompra" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="VideoJuego.precioVenta" class="control-label"></label>
+                    <input asp-for="VideoJuego.precioVenta" class="form-control" />
+                    <span asp-validation-for="VideoJuego.precioVenta" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-page="Index">Back to List</a>
+    </div>
+</div>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
