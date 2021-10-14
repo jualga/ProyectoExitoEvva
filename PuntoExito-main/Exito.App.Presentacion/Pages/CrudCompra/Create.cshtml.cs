@@ -62,7 +62,11 @@ namespace Exito.App.Presentacion.Pages.CrudCompra
                 }
 
                 Compra.EmpleadoId = Person.EmpleadoId;
+                Compra.Total = Cantidad * Consola.precioCompra;
+                Compra.Finalizada = true;
                 Compra.ConsolaId = Consola.Id;
+                Compra.Cantidad = Cantidad;
+                Compra.Fecha = DateTime.Now.ToString();
                 var ActualCompra = _context.Compras.Add(Compra);
 
                 // CompraDetalle.CompraId = ActualCompra.CompraId;

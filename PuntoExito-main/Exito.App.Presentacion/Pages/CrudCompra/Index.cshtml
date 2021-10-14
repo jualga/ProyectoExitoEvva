@@ -16,17 +16,24 @@
     <table class="table">
         <thead>
             <tr>
+                
                 <th>
-                    @Html.DisplayNameFor(model => model.Compra[0].Fecha)
+                    @Html.DisplayNameFor(model => model.Compra[0].Consola)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Compra[0].Cantidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Compra[0].Empleado)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Compra[0].Total)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Compra[0].Finalizada)
+                    @Html.DisplayNameFor(model => model.Compra[0].Fecha)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Compra[0].Empleado)
+                    @Html.DisplayNameFor(model => model.Compra[0].Finalizada)
                 </th>
                 <th></th>
             </tr>
@@ -36,17 +43,24 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Fecha)
+                        @Html.DisplayFor(modelItem => item.Consola.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cantidad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Empleado.Nombre)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Total)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Finalizada)
+                        @Html.DisplayFor(modelItem => item.Fecha)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Empleado.EmpleadoId)
+                        @Html.DisplayFor(modelItem => item.Finalizada)
                     </td>
+                    
                     <td>
                         <a asp-page="./Edit" asp-route-id="@item.CompraId">Edit</a> |
                         <a asp-page="./Details" asp-route-id="@item.CompraId">Details</a> |

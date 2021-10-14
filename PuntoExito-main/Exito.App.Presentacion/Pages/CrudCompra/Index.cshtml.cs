@@ -24,7 +24,8 @@ namespace Exito.App.Presentacion.Pages.CrudCompra
         public async Task OnGetAsync()
         {
             Compra = await _context.Compras
-                .Include(c => c.Empleado).ToListAsync();
+                .Include(c => c.Empleado)
+                .Include(c => c.Consola).ToListAsync();
         }
     }
 }
