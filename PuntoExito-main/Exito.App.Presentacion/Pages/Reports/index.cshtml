@@ -1,0 +1,156 @@
+﻿@page
+@model Exito.App.Presentacion.Pages.Reports.indexModel
+
+@{
+    ViewData["Title"] = "Create";
+    await Html.RenderPartialAsync("_Header");
+    await Html.RenderPartialAsync("_SideMenu");
+}
+
+
+<div class="main">
+    <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Ventas utimos 30 dias
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        <table class="table">
+        <thead>
+            <tr>
+                
+                <th>
+                    @Html.DisplayNameFor(model => model.Venta[0].Consola)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Venta[0].Cantidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Venta[0].Empleado)
+                </th>
+                <th>
+                    Valor Unidad
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Venta[0].Total)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Venta[0].Fecha)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Venta[0].Finalizada)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Venta)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Consola.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cantidad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Empleado.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Consola.precioVenta)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Total)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Finalizada)
+                    </td>
+                    
+                </tr>
+            }
+        </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Compras utimos 30 dias
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Compra[0].Consola)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Compra[0].Cantidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Compra[0].Empleado)
+                </th>
+                <th>
+                    Valor Unidad
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Compra[0].Total)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Compra[0].Fecha)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Compra[0].Finalizada)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Compra)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Consola.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cantidad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Empleado.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Consola.precioCompra)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Total)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Finalizada)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+      </div>
+    </div>
+  </div>
+    
+</div>

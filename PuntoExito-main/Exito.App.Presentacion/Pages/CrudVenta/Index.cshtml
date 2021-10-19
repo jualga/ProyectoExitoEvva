@@ -1,5 +1,5 @@
 @page
-@model Exito.App.Presentacion.Pages.CrudCompra.IndexModel
+@model Exito.App.Presentacion.Pages.CrudVenta.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -16,33 +16,33 @@
     <table class="table">
         <thead>
             <tr>
-
+                
                 <th>
-                    @Html.DisplayNameFor(model => model.Compra[0].Consola)
+                    @Html.DisplayNameFor(model => model.Venta[0].Consola)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Compra[0].Cantidad)
+                    @Html.DisplayNameFor(model => model.Venta[0].Cantidad)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Compra[0].Empleado)
+                    @Html.DisplayNameFor(model => model.Venta[0].Empleado)
                 </th>
                 <th>
                     Valor Unidad
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Compra[0].Total)
+                    @Html.DisplayNameFor(model => model.Venta[0].Total)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Compra[0].Fecha)
+                    @Html.DisplayNameFor(model => model.Venta[0].Fecha)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Compra[0].Finalizada)
+                    @Html.DisplayNameFor(model => model.Venta[0].Finalizada)
                 </th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Compra)
+            @foreach (var item in Model.Venta)
             {
                 <tr>
                     <td>
@@ -55,7 +55,7 @@
                         @Html.DisplayFor(modelItem => item.Empleado.Nombre)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Consola.precioCompra)
+                        @Html.DisplayFor(modelItem => item.Consola.precioVenta)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Total)
@@ -66,7 +66,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Finalizada)
                     </td>
-
+                    
                     <td>
                         <a asp-page="./Edit" asp-route-id="@item.EmpleadoId" class="btn btn-primary" title="Editar"><i class="fas fa-edit"></i></a>
                         <a asp-page="./Details" asp-route-id="@item.EmpleadoId" class="btn btn-secondary"  title="Datlles"><i class="fas fa-clipboard-list"></i></a>

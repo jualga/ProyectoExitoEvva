@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 using Exito.App.Dominio;
 using Exito.App.Persistencia;
 
-namespace Exito.App.Presentacion.Pages.CrudCompra
+namespace Exito.App.Presentacion.Pages.CrudVenta
 {
     public class IndexModel : PageModel
     {
@@ -21,14 +21,14 @@ namespace Exito.App.Presentacion.Pages.CrudCompra
             _context = context;
         }
 
-        public IList<Compra> Compra { get;set; }
+        public IList<Venta> Venta { get;set; }
 
         public async Task OnGetAsync()
         {
             string JsonOjb = HttpContext.Session.GetString("user");
             if(JsonOjb != null){
                 Empleado Person = JsonConvert.DeserializeObject<Empleado>(JsonOjb);
-                Compra = await _context.Compras
+                Venta = await _context.Ventas
                     .Include(c => c.Empleado)
                     .Include(c => c.Consola)
                     .Where(c => c.Empleado.EmpleadoId == Person.EmpleadoId)

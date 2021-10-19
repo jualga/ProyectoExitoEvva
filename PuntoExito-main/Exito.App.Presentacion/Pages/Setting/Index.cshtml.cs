@@ -15,8 +15,13 @@ namespace Exito.App.Presentacion.Pages.Setting
         [BindProperty]
         public string Message {get; set;}
         
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            Exito.App.Persistencia.AppContext _context = new Exito.App.Persistencia.AppContext();
+
+            var res = _context.Roles.FirstOrDefault();
+
+            if(res == null){
             List<Rol> Roles =  new List<Rol>();
             List<Sucursal> Sucursales =  new List<Sucursal>();
             List<TypoDisco> TypoDiscos =  new List<TypoDisco>();
@@ -34,7 +39,6 @@ namespace Exito.App.Presentacion.Pages.Setting
             {
                 TypoDiscos.Add(new TypoDisco{Nombre = discos});
             }
-            Exito.App.Persistencia.AppContext _context = new Exito.App.Persistencia.AppContext();
 
             _context.TypoDiscos.AddRange(TypoDiscos);
             _context.Sucursales.AddRange(Sucursales);
@@ -46,6 +50,8 @@ namespace Exito.App.Presentacion.Pages.Setting
             _context.SaveChanges();
 
             Message = "Data saved";
+            }
+            return RedirectToPage("/Index");
 
         }
     }

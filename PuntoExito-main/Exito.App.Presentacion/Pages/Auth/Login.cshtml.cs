@@ -59,7 +59,7 @@ namespace Exito.App.Presentacion.Pages.LogIn
                     if(EmpleadoFound.Rol.Nombre.Equals("Administrador de sistemas"))
                         return RedirectToPage("../CrudEmpleado/Index");
                     if(EmpleadoFound.Rol.Nombre.Equals("Administrador de Ventas"))
-                        return RedirectToPage("../CrudVentas/Index");
+                        return RedirectToPage("../Reports/Index");
                     if(EmpleadoFound.Rol.Nombre.Equals("Administrador de compras"))
                         return RedirectToPage("../CrudCompra/Index");
                     if(EmpleadoFound.Rol.Nombre.Equals("Vendedor"))

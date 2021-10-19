@@ -1,16 +1,14 @@
 @page
-@model Exito.App.Presentacion.Pages.CrudCompra.DeleteModel
+@model Exito.App.Presentacion.Pages.CrudVenta.DetailsModel
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Details";
     await Html.RenderPartialAsync("_Header");
     await Html.RenderPartialAsync("_SideMenu");
 }
 
 
 <div class="main">
-
-    <h3>Are you sure you want to delete this?</h3>
     <div>
         <h4>Compra</h4>
         <hr />
@@ -40,12 +38,9 @@
                 @Html.DisplayFor(model => model.Compra.Empleado.EmpleadoId)
             </dd>
         </dl>
-
-
-        <form method="post">
-            <input type="hidden" asp-for="Compra.CompraId" />
-            <input type="submit" value="Delete" class="btn btn-danger" /> |
-            <a asp-page="./Index">Back to List</a>
-        </form>
+    </div>
+    <div>
+        <a asp-page="./Edit" asp-route-id="@Model.Compra.CompraId">Edit</a> |
+        <a asp-page="./Index">Back to List</a>
     </div>
 </div>

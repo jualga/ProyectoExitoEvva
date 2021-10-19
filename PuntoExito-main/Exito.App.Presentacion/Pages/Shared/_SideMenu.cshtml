@@ -15,42 +15,42 @@
     
     <div class="s-menu-container">
         @if(Person.Rol.Nombre.Equals("Administrador de sistemas")){
-            <a href="/CrudEmpleado/Create" class="s-menu-item">
-                Registrar empleado
+            <a href="/CrudEmpleado" class="CrudEmpleado s-menu-item">
+                Empleaodos
             </a>
         
         }
         @if(Person.Rol.Nombre.Equals("Administrador de Ventas")){
-            <a href="/CrudEmpleado/Create" class="s-menu-item">
-                Ventas
+            <a href="/Reports" class="reports s-menu-item">
+                Reportes
             </a>
         
         }
         @if(Person.Rol.Nombre.Equals("Administrador de compras")){
-            <a href="/CrudCompra" class="s-menu-item">
+            <a href="/CrudCompra" class="CrudCompra s-menu-item">
                 Compras
             </a>
-            <a href="/CrudControl" class="s-menu-item">
+            <a href="/CrudControl" class="CrudControl s-menu-item">
                 Controles
             </a>
-            <a href="/CrudVideoJuegos" class="s-menu-item">
+            <a href="/CrudVideoJuegos" class="CrudVideoJuegos s-menu-item">
                 Video Juegos
             </a>
-            <a href="/CrudConsola" class="s-menu-item">
+            <a href="/CrudConsola" class="CrudConsola s-menu-item">
                 Consolas
             </a>
         }
         @if(Person.Rol.Nombre.Equals("Vendedor")){
-            <a href="/CrudControl" class="s-menu-item">
+            <a href="/CrudControl" class="CrudControl s-menu-item">
                 Controles
             </a>
-            <a href="/CrudVideoJuegos" class="s-menu-item">
+            <a href="/CrudVideoJuegos" class="CrudVideoJuegos s-menu-item">
                 Video Juegos
             </a>
-            <a href="/CrudConsola" class="s-menu-item">
+            <a href="/CrudConsola" class="CrudConsola s-menu-item">
                 Consolas
             </a>
-            <a href="/CrudEmpleado/Create" class="s-menu-item">
+            <a href="/CrudVenta/Create" class="CrudVenta s-menu-item">
                 Venta
             </a>
         

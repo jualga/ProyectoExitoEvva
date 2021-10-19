@@ -1,5 +1,15 @@
 @page
 @model Exito.App.Presentacion.Pages.CrudConsola.IndexModel
+@using Microsoft.AspNetCore.Http;
+@using Newtonsoft.Json;
+@using Exito.App.Dominio;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    string name = @HttpContextAccessor.HttpContext.Session.GetString("user");
+}
+@{
+    Empleado Person = JsonConvert.DeserializeObject<Empleado>(name);
+}
 
 @{
     ViewData["Title"] = "Index";
@@ -9,12 +19,18 @@
 
 
 <div class="main">
-    <p>
-        <a asp-page="Create" class="btn btn-primaty">Create New</a>
-    </p>
+    @if (!Person.Rol.Nombre.Equals("Vendedor"))
+    {
+        <p>
+            <a asp-page="Create" class="btn btn-primary">Create New <i class="fas fa-plus"></i></a>
+        </p>
+    }
     <table class="table">
         <thead>
             <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Consola[0].Codigo)
+                </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Consola[0].Nombre)
                 </th>
@@ -36,7 +52,7 @@
                 <th>
                     Control
                 </th>
-                
+
                 <th>
                     @Html.DisplayNameFor(model => model.Consola[0].precioCompra)
                 </th>
@@ -50,6 +66,9 @@
             @foreach (var item in Model.Consola)
             {
                 <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo)
+                    </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Nombre)
                     </td>
@@ -71,18 +90,23 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Controles.Nombre)
                     </td>
-                    
+
                     <td>
                         @Html.DisplayFor(modelItem => item.precioCompra)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.precioVenta)
                     </td>
+
                     <td>
-                        <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primaty">Edit</a>
-                        <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-secondary">Details</a>
-                        <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                        @if (!Person.Rol.Nombre.Equals("Vendedor"))
+                        {
+                            <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                            <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                        }
+                        <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-secondary"><i class="fas fa-clipboard-list"></i></a>
                     </td>
+
                 </tr>
             }
         </tbody>

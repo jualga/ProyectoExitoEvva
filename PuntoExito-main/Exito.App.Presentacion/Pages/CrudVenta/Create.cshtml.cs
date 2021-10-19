@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 using Exito.App.Dominio;
 using Exito.App.Persistencia;
 
-namespace Exito.App.Presentacion.Pages.CrudCompra
+namespace Exito.App.Presentacion.Pages.CrudVenta
 {
     public class CreateModel : PageModel
     {
@@ -33,13 +33,8 @@ namespace Exito.App.Presentacion.Pages.CrudCompra
         [BindProperty]
         public string CodigoMessage { get; set; }
         [BindProperty]
-        public Compra Compra { get; set; }
+        public Venta Venta { get; set; }
 
-        // [BindProperty]
-        // public CompraDetalle CompraDetalle { get; set; }
-
-        // [BindProperty]
-        // public List<Compra> CompraDetalles { get; set; }
         [BindProperty]
         public string Codigo { get; set; }
         [BindProperty]
@@ -64,16 +59,16 @@ namespace Exito.App.Presentacion.Pages.CrudCompra
                     return Page();
                 }
 
-                Compra.EmpleadoId = Person.EmpleadoId;
-                Compra.Total = Cantidad * Consola.precioCompra;
-                Compra.Finalizada = true;
-                Compra.ConsolaId = Consola.Id;
-                Compra.Cantidad = Cantidad;
-                Compra.Fecha = DateTime.Now;
-                var ActualCompra = _context.Compras.Add(Compra);
+                Venta.EmpleadoId = Person.EmpleadoId;
+                Venta.Total = Cantidad * Consola.precioVenta;
+                Venta.Finalizada = true;
+                Venta.ConsolaId = Consola.Id;
+                Venta.Cantidad = Cantidad;
+                Venta.Fecha = DateTime.Now;
+                var ActualVenta = _context.Ventas.Add(Venta);
 
-                // CompraDetalle.CompraId = ActualCompra.CompraId;
-                // _context.CompraDetalles.Add(CompraDetalle);
+                // VentaDetalle.VentaId = ActualVenta.VentaId;
+                // _context.VentaDetalles.Add(VentaDetalle);
                 await _context.SaveChangesAsync();
 
                 return RedirectToPage("./Index");

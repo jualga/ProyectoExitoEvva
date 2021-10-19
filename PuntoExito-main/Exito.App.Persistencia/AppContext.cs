@@ -24,7 +24,7 @@ namespace Exito.App.Persistencia
 
             if (!builder.IsConfigured)
             {
-                builder.UseSqlServer("Data source = (localdb)\\MSSQLLocalDB; Initial Catalog = ExitoAppV6");
+                builder.UseSqlServer("Data source = (localdb)\\MSSQLLocalDB; Initial Catalog = ExitoAppV7");
             }
         }
 

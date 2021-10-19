@@ -1,6 +1,15 @@
 @page
 @model Exito.App.Presentacion.Pages.CrudVideoJuegos.IndexModel
-
+@using Microsoft.AspNetCore.Http;
+@using Newtonsoft.Json;
+@using Exito.App.Dominio;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    string name = @HttpContextAccessor.HttpContext.Session.GetString("user");
+}
+@{
+    Empleado Person = JsonConvert.DeserializeObject<Empleado>(name);
+}
 @{
     ViewData["Title"] = "Index";
     await Html.RenderPartialAsync("_Header");
@@ -9,9 +18,12 @@
 
 
 <div class="main">
-    <p>
-        <a asp-page="Create">Create New</a>
-    </p>
+    @if (!Person.Rol.Nombre.Equals("Vendedor"))
+    {
+        <p>
+            <a asp-page="Create" class="btn btn-primary">Create New <i class="fas fa-plus"></i></a>
+        </p>
+    }
     <table class="table">
         <thead>
             <tr>
@@ -53,9 +65,12 @@
                         @Html.DisplayFor(modelItem => item.precioVenta)
                     </td>
                     <td>
-                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                        @if (!Person.Rol.Nombre.Equals("Vendedor"))
+                        {
+                            <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                            <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                        }
+                        <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-secondary"><i class="fas fa-clipboard-list"></i></a>
                     </td>
                 </tr>
             }

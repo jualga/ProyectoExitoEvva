@@ -215,16 +215,20 @@ main {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.40);
+    z-index: 10000000;
 }
 
 .header .h-icon .submenu::before {
     content: "";
-    width: 15px;
-    height: 15px;
     position: absolute;
-    top: -15px;
-    right: 20px;
-    background-color: #FFFFFF;
+    top: -20px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-bottom: 15px solid #ffffff;
 }
 
 .header .h-icon .hide {
@@ -296,6 +300,11 @@ main {
 }
 
 .side-menu .s-menu-container .s-menu-item:hover {
+    background-color: #E1CD02;
+    color: #191919;
+}
+
+.side-menu .s-menu-container .i-active {
     background-color: #E1CD02;
     color: #191919;
 }
