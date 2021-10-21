@@ -21,7 +21,7 @@ namespace Exito.App.Presentacion.Pages.Auth
         {
             _context = new Exito.App.Persistencia.AppContext();
         }
-
+        //
 
         [BindProperty]
         public string Password1 { get; set; } = "";
